@@ -1,0 +1,59 @@
+.calculator {
+  margin: 50px auto;
+  padding: 25px 10px;
+  text-align: center;
+  width: 380px;
+  height: 304px;
+  border: 2px solid grey;
+  border-radius: 8px;
+  background-color: #d9dde2;
+}
+
+.inputPos {
+  height: 60px;
+  margin: 8px 16px;
+}
+
+.inputBox {
+  font-size: 3em;
+  text-align: right;
+  padding-right: 6px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  background-color: #cdff72;
+}
+
+button {
+  height: 40px;
+  width: 80px;
+  margin: 3px;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 1px 1px;
+  cursor: pointer;
+  outline: none;
+}
+
+button:active {
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+
+#equal {
+  background-color: #3679a5;
+}
+
+.clearAll {
+  background-color: #ff5035;
+}
+
+.operators {
+  background-color: #fcaf5d;
+}
+
+.numbers {
+  background-color: #e6ecf4;
+}
