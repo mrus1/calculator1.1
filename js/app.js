@@ -32,9 +32,7 @@ $(".operators").click(function(){
 
 $("#equal").click(function(){
   equal = ($(this).val());
-  $(".inputBox").text(equal);
   result();
-  i = 1;
 });
 
 $(".clearAll").click(function(){
@@ -57,6 +55,9 @@ function specialOper(){
 };
 
 function result(){
+  $(".inputBox").text("Error!!");
+  i = 1;
+  //if can't pass next line, error will stay on display
   resultValue = eval(expression.nums);
   $(".inputBox").text(resultValue);
   $(".currentExpr").text(expression.nums);
