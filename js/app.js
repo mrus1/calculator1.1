@@ -1,37 +1,78 @@
 let number;
 let operator;
 let equal;
+let resultValue;
+let i = 0;
 let expression = {
   nums:""
 };
 
 $(".numbers").click(function(){
-  number = parseInt($(this).val());
-  console.log("button " + number + " was clicked");
-  $(".inputBox").text(number);
-  expression.nums += number;
+  if(i == 1){
+    clearExpr();
+    number = parseInt($(this).val());
+    $(".inputBox").text(number);
+    expression.nums += number;
+    $(".currentExpr").text(expression.nums);
+  } else {
+    number = parseInt($(this).val());
+    $(".inputBox").text(number);
+    expression.nums += number;
+    $(".currentExpr").text(expression.nums);
+  };
 });
 
 $(".operators").click(function(){
   operator = ($(this).val());
-  console.log("operator " + operator + " was clicked");
-  $(".inputBox").text(operator);
+  specialOper();
   expression.nums += operator;
+  $(".currentExpr").text(expression.nums);
+  i = 0;
 });
 
 $("#equal").click(function(){
   equal = ($(this).val());
-  console.log("clicked equal " + equal);
   $(".inputBox").text(equal);
-  console.log(expression);
   result();
+  i = 1;
 });
 
 $(".clearAll").click(function(){
-  console.log("clicked AC");
+  clearExpr();
 });
 
+function specialOper(){
+  if(operator == "*"){
+    $(".inputBox").text("x")
+  } else if (operator == "/"){
+    $(".inputBox").text("÷")
+  } else if (operator == "%") {
+    $(".inputBox").text("% x");
+    operator = "*0.01*"
+  } else if (operator == "(") {
+    operator = "*("
+  } else {
+    $(".inputBox").text(operator);
+  };
+};
+
 function result(){
-  let resultValue = eval(expression.nums);
+  resultValue = eval(expression.nums);
   $(".inputBox").text(resultValue);
+  $(".currentExpr").text(expression.nums);
+  //same as storing in ANS:
+  expression = {
+    nums: resultValue
+  };
+};
+
+function clearExpr(){
+  number = "";
+  operator = "";
+  expression = {
+    nums:""
+  };
+  $(".inputBox").text("0");
+  $(".currentExpr").text("0");
+  i = 0;
 };

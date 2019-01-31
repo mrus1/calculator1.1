@@ -3,10 +3,23 @@
   padding: 25px 8px;
   text-align: center;
   width: 380px;
-  height: 304px;
-  border: 2px solid grey;
+  height: 350px;
+  border: 2px solid #7c7c74;
   border-radius: 8px;
   background-color: #d9dde2;
+}
+
+.currentExpr {
+  height: 35px;
+  font-size: 2em;
+  text-align: right;
+  color: #161615;
+  background-color: #edff66;
+  border: 1px solid #7c7c74;
+  padding-right: 5px;
+  margin: 0 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .inputPos {
@@ -21,6 +34,12 @@
   border: 1px solid grey;
   border-radius: 4px;
   background-color: #cdff72;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.keyPad {
+  margin-top: 12px;
 }
 
 button {
@@ -37,9 +56,9 @@ button {
 
 button:active {
   -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-          box-shadow: inset 0px 0px 5px #c1c1c1;
-   outline: none;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  outline: none;
 }
 
 #equal {
